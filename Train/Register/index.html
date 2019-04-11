@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Test</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="css/index.css" rel="stylesheet">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+<body>
+	<!-- header-->
+	<div class="header">
+		<div class="header-bd">
+			<a href="http://www.12306.cn/">
+				<h1 class="logo">中国铁路客户服务中心-客运中心</h1>
+			</a>
+			<div class="login-info">
+				<div class="phone-link">
+					<a>手机版</a>
+				</div>
+				<div class="menu">
+					<a href="" class="menu-bd">
+						我的12306
+						<b></b>
+					</a>
+					<div class="menu-list">
+						<b></b>
+						<ul>
+							<li>
+								<a href="">未完成订单</a>
+							</li>
+							<li>
+								<a href="">已完成订单(改/退)</a>
+							</li>
+							<li class="line"></li>
+							<li>
+								<a href="">我的餐饮</a>
+							</li>
+							<li>
+								<a href="">我的保险</a>
+							</li>
+							<li class="line"></li>
+							<li>
+								<a href="">查看个人信息</a>
+							</li>
+							<li>
+								<a href="">账户安全</a>
+							</li>
+							<li class="line"></li>
+							<li>
+								<a href="">常用联系人</a>
+							</li>
+							<li class="line"></li>
+							<li>
+								<a href="">温馨服务查询</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<span class="login-txt">
+					<span>
+						意见反馈:
+						<a class="cursor colorA" href="">
+							12306yjfk@rails.com.cn
+						</a>
+          				<a id="welWords">您好，请</a>
+          			</span>
+          			<a id="login_user" class="colorA">登录</a>
+          			| 
+          			<a id="regist_out">注册</a>
+          		</span>
+			</div>
+			<div class="nav">
+				<ul>
+					<li>
+						<a class="navListItem current">客运首页</a>
+					</li>
+					<li>
+						<a class="navListItem">车票预订</a>
+					</li>
+					<li>
+						<a class="navListItem">连续换乘</a>
+					</li>
+					<li>
+						<a class="navListItem">订餐服务</a>
+					</li>
+					<li>
+						<a class="navListItem">出行向导</a>
+						<div class="nav-list">
+							<ul>
+								<li>
+									<a href="">车次查询</a>
+								</li>
+								<li>
+									<a href="">票价查询</a>
+								</li>
+								<li>
+									<a href="">公布票价查询</a>
+								</li>
+								<li>
+									<a href="">车站车次查询</a>
+								</li>
+								<li>
+									<a href="">中转查询</a>
+								</li>
+								<li>
+									<a href="">正晚点查询</a>
+								</li>
+								<li>
+									<a href="">代售点查询</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a class="navListItem">信息服务</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- 页面主体 -->
+	<div class="content"><!--当前位置 开始-->
+	<div class="crumbs">
+    	您现在的位置：
+    	<a href="" shape="rect">客运首页</a>
+		&nbsp;>&nbsp;
+		<a href="" shape="rect">注册</a>
+	</div>
+<!--当前位置 结束-->
+	<form id="registForm" method="get" enctype="application/x-www-form-urlencoded">
+	<div class="layout reg">
+		<div class="lay-hd">账户信息</div>
+		<div class="lay-bd">
+			<ul class="reg-list">
+				<li>
+					<div class="label">
+					<span class="required">*</span>
+					用 户 名：
+					</div>
+					<div class="r-txt">
+					<input type="text" placeholder="用户名设置成功后不可修改" class="inptxt w200" name="loginUserDTO.user_name" id="userName" maxlength="30" />
+					</div>
+					<div class="tips">
+						<span id="iok_userName" class="tips i-ok">
+						</span>
+						6-30位字母、数字或“_”,字母开头
+					</div>
+				</li>
+				<label for="userName" class="error" id="item1">请输入用户名！</label>
+				<li>
+					<div class="label">
+					<span class="required">*</span>
+					登录密码：
+					</div>
+					<div class="r-txt">
+					<input placeholder="6-20位字母、数字或符号" class="inptxt w200" name="userDTO.password" id="passWord" type="password" maxlength="25" />
+					</div>
+					<div class="tips">
+					<span></span>
+					<div id="_div_password_rank" class="safe-rank rank-a"><!--危险rank-a,一般rank-b,安全rank-c-->
+					<span class="s1"></span>
+					<span class="s2"></span>
+					<span class="s3"></span>
+					</div>
+					</div>
+					<div class="tips">
+						<span id="iok_passWord" class="tips i-ok">
+						</span>
+					</div>
+				</li>
+				<label for="passWord" class="error" id="item2">请输入密码！</label>
+				<li>
+					<div class="label"><span class="required">*</span>
+					确认密码：</div>
+					<div class="r-txt"><input placeholder="再次输入您的登录密码" class="inptxt w200" name="confirmPassWord" id="confirmPassWord" type="password" maxlength="25" />
+					</div>
+					<div class="tips"><span id="iok_confirmPassWord" class="tips i-ok"></span>
+					</div>
+				</li>
+				<label for="confirmPassWord" class="error" id="item3">请输入确认密码！</label>
+				<li>
+					<div class="label"><span class="required">*</span>姓   名：
+					</div>
+					<div class="r-txt">
+					<input placeholder="请输入姓名" type="text" class="inptxt w200" name="loginUserDTO.name" maxlength="30" id="name" />
+					</div>
+					<div class="tips">
+						<span id="iok_name" class="tips i-ok">
+						</span>
+					</div>
+				</li>
+				<label for="loginUserDTO.name" class="error" id="item4">请输入您的姓名！</label>
+				<li>
+				<div class="label"><span class="required">*</span>
+					证件类型：</div>
+					<div class="r-txt"><select class="w200sel" name="loginUserDTO.id_type_code" id="cardType"><option value="1"><span>二代身份证</span>
+					</option>
+					<option value="2"><span>港澳通行证</span>
+					</option>
+					<option value="3"><span>台湾通行证</span>
+					</option>
+					<option value="4"><span>护照</span>
+					</option>
+					</select>
+					</div>
+				</li>
+				<li>
+					<div class="label"><span class="required">*</span>
+					证件号码：</div>
+					<div class="r-txt"><div class="pos-rel"><input placeholder="请输入您的证件号码" type="text" name="loginUserDTO.id_no" id="cardCode" class="inptxt w200 color333" maxlength="18" value="" />
+					</div>
+					</div>
+					<div class="tips">
+						<span id="iok_cardcode" class="tips i-ok">
+						</span>
+					</div>
+				</li>
+				<label for="cardCode" class="error" id="item5">请输入证件号码！</label>
+				<li>
+					<div class="label">邮    箱：</div>
+					<div class="r-txt"><input placeholder="请正确填写邮箱地址" type="text" id="email" name="userDTO.email" class="inptxt w200 inp-transform" autocomplete="off" />
+					</div>
+					<div class="tips">
+						<span id="iok_email" class="tips i-ok">
+						</span>
+					</div>
+				</li>
+				<label for="cardCode" class="error" id="item6">请输入邮箱！</label>
+				<li>
+					<div class="label"><span class="required">*</span>手机号码：
+					</div>
+					<div class="r-txt">
+						<div class="pos-rel"><input type="text" placeholder="请输入您的手机号码" name="userDTO.mobile_no" class="inptxt w200 color333" id="mobileNo" maxlength="30" value="" />
+						</div>
+					</div>
+					<div class="tips" style="color: #FF7F00;">请正确填写手机号码，稍后将发送短信验证码</div>
+					<div class="tips">
+						<span id="iok_phone" class="tips i-ok">
+						</span>
+					</div>
+				</li>
+					<label for="mobileNo" class="error" id="item7">请输入手机号码！</label>
+				<li>
+						<div class="label">
+							<span class="required">*</span>旅客类型：
+						</div>
+						<div class="r-txt">
+							<select class="w200sel" id="passengerType" name="passenger_type">  <option value="1">成人</option>
+							<option value="2">儿童</option>
+							<option value="3">学生</option>
+							<option value="4">残疾军人、伤残人民警察</option>
+							</select>
+				</div>
+				<div class="tips"><a href="#nogo" shape="rect"></a>
+				</div>
+				</li>
+
+
+<li>
+<div class="label" style="width:373px;">&nbsp;</div>
+<div class="r-txt"><input type="checkbox" class="check" id="checkAgree" />
+<span style="font-size: 14px;"><label for="checkAgree">我已阅读并同意遵守</label>
+</span>
+<a href="/otn/regist/rule" class="ft14" target="_blank" shape="rect">《中国铁路客户服务中心网站服务条款》</a>
+</div>
+</li>
+</ul>
+<div class="lay-btn captchaButton " style="position:relative;" data-touclick-name=""><a id="nextBtn"  class="btn122s" shape="rect">下一步</a>
+</div>
+</div>
+</div>
+</div>
+</form>
+<!--账户信息 结束-->
+</div>
+
+	<!-- 页面底部 -->
+	<div class="footer">
+		<p>
+			<a href="">关于我们</a>
+			|
+			<a href="">网站声明</a>
+		</p>
+		<p>版权所有 © 2008-2017 中国铁路信息技术中心 中国铁道科学研究院</p>
+		<p>京ICP备15003716号-3&nbsp;&nbsp;|&nbsp;&nbsp;京ICP证150437号</p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<script src="lib/jquery-3.2.1.js"></script>
+<script src="js/register.js"></script>
+<script src="js/verify.js"></script>
+</html>

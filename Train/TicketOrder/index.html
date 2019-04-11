@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Test</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="css/index.css" rel="stylesheet">
+		<link href="css/kuCity.css" rel="stylesheet">
+		<link href="css/pikaday.css" rel="stylesheet">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+<body>
+	<!-- header-->
+	<div class="header">
+		<div class="header-bd">
+			<a href="http://www.12306.cn/">
+				<h1 class="logo">中国铁路客户服务中心-客运中心</h1>
+			</a>
+			<div class="login-info">
+				<div class="phone-link">
+					<a>手机版</a>
+				</div>
+				<div class="menu">
+					<a href="" class="menu-bd">
+						我的12306
+						<b></b>
+					</a>
+					<div class="menu-list">
+						<b></b>
+						<ul>
+							<li>
+								<a href="">未完成订单</a>
+							</li>
+							<li>
+								<a href="">已完成订单(改/退)</a>
+							</li>
+							<li class="line"></li>
+							<li>
+								<a href="">我的餐饮</a>
+							</li>
+							<li>
+								<a href="">我的保险</a>
+							</li>
+							<li class="line"></li>
+							<li>
+								<a href="">查看个人信息</a>
+							</li>
+							<li>
+								<a href="">账户安全</a>
+							</li>
+							<li class="line"></li>
+							<li>
+								<a href="">常用联系人</a>
+							</li>
+							<li class="line"></li>
+							<li>
+								<a href="">温馨服务查询</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<span class="login-txt">
+					<span>
+						意见反馈:
+						<a class="cursor colorA" href="">
+							12306yjfk@rails.com.cn
+						</a>
+          				<a id="welWords">您好，请</a>
+          			</span>
+          			<a id="login_user" class="colorA">登录</a>
+          			| 
+          			<a id="regist_out">注册</a>
+          		</span>
+			</div>
+			<div class="nav">
+				<ul>
+					<li>
+						<a class="navListItem" href="../HomePage/index.html">客运首页</a>
+					</li>
+					<li>
+						<a class="navListItem current">车票预订</a>
+					</li>
+					<li>
+						<a class="navListItem">连续换乘</a>
+					</li>
+					<li>
+						<a class="navListItem">订餐服务</a>
+					</li>
+					<li>
+						<a class="navListItem">出行向导</a>
+						<div class="nav-list">
+							<ul>
+								<li>
+									<a href="">车次查询</a>
+								</li>
+								<li>
+									<a href="">票价查询</a>
+								</li>
+								<li>
+									<a href="">公布票价查询</a>
+								</li>
+								<li>
+									<a href="">车站车次查询</a>
+								</li>
+								<li>
+									<a href="">中转查询</a>
+								</li>
+								<li>
+									<a href="">正晚点查询</a>
+								</li>
+								<li>
+									<a href="">代售点查询</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a class="navListItem">信息服务</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- 公告 -->
+	<div class="ban-area">
+		<div class="notice" id="scroll">
+			<strong>温馨提示：</strong>
+			<div class="notice-in">
+				<ul>
+					<li>
+						列车运行图调整，12月30日之后车票预售期调整为30天，12月29日及之前的车票正常发售。
+					</li>
+				</ul>
+			</div>
+			<a class="i-close" shape="rect"></a>
+		</div>
+	</div>
+
+	<!-- 页面主体 -->
+	<div class="content">
+		<!-- 车票搜索框 -->
+		<div class="sear-box quick-sear-box">
+			<form id="queryLeftForm" method="get">
+				<div class="dfc" id="dfc">
+					<ul>
+						<li>
+							<input name="singleRoundType" type="radio" id="dc" class="radio" checked="checked" value="dc">
+							<label for="dc" id="dc_label" class="cursor">单程</label>
+						</li>
+						<li>
+							<input name="singleRoundType" type="radio" id="wf" class="radio" value="wc">
+							<label for="wf" id="wf_label" class="cursor">往返</label>
+						</li>
+					</ul>
+				</div>
+				<div class="s-info" id="place_area">
+					<ul>
+						<li>
+							<span class="label">
+								<label id="fromStationText_label">出发地</label>
+							</span>
+							<div class="inp-w">
+								<input type="text" id="fromStationText" class="inp-txt" value="杭州" name="leftTicketDTO.from_station_name">
+								<span class="i-city" id="fromStation_icon_image"></span>
+							</div>
+						</li>
+						<li class="i-change i-change2" id="change_station"></li>
+						<li>
+							<span class="label">
+								<label id="toStationText_label"> 目的地</label>
+							</span>
+							<div class="inp-w">
+								<input type="text" id="toStationText" class="inp-txt" value="上海" name="leftTicketDTO.to_station_name">
+								<span class="i-city" id="toStation_icon_image"></span>
+							</div>
+						</li>
+						<li>
+							<span class="label"> 出发日</span>
+							<div class="inp-w" style="z-index: 1200">
+								<input type="text" class="inp_selected" name="leftTicketDTO.train_date" id="train_date" value="2017-11-18">
+								<span id="date_icon_1" class="i-date"></span>
+							</div>
+						</li>
+						<li class="no-change">
+							<span class="label"> 返程日</span>
+							<div class="inp-w" id="back_div" style="z-index:1100">
+								<input type="text" class="inp-txt" name="back_train_date" id="back_train_date" value="" disabled="disabled">
+								<span id="date_icon_2" class="i-date" style="background-position: 0 -300px;"></span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="quick-s">
+					<ul>
+						<li>
+							<input type="radio" id="sf1" class="radio" name="sf" checked="checked">
+							<label id="sf1_label" for="sf1" class="cursor">普通</label>
+						</li>
+						<li>
+							<input type="radio" id="sf2" class="radio" name="sf">
+							<label id="sf2_label" for="sf2" class="cursor">学生</label>
+						</li>
+					</ul>
+					<div class="btn-area">
+						<a id="query_ticket" class="btn92s" shape="rect" style="cursor: pointer;">查询</a>
+						<div>
+							<input id="auto_query" type="checkbox" class="check" style="margin-right:0px;">
+							<label id="autoQueryTxt" for="auto_query" style="cursor: pointer;">开启自动查询</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<!-- 车票搜索框2 -->
+		<div class="sear-sel" id="sear-sel">
+			<div id="date_range" class="sear-sel-hd clearfix">
+				<ul>
+					<li class="sel" flag="1">
+						<span class="hide" style="cursor: pointer;">11-18</span>
+						<span class="first">11-18 周六</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">11-19</span>
+						<span class="hide">11-19 周日</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">11-20</span>
+						<span class="hide">11-20 周一</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">11-21</span>
+						<span class="hide">11-21 周二</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">11-22</span>
+						<span class="hide">11-22 周三</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">11-23</span>
+						<span class="hide">11-23 周四</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">11-24</span>
+						<span class="hide">11-24 周五</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">11-25</span>
+						<span class="hide">11-25 周六</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">11-26</span>
+						<span class="hide">11-26 周日</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">11-27</span>
+						<span class="hide">11-27 周一</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">11-28</span>
+						<span class="hide">11-28 周二</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">11-29</span>
+						<span class="hide">11-29 周三</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">11-30</span>
+						<span class="hide">11-30 周四</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">12-1</span>
+						<span class="hide">12-1 周五</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">12-2</span>
+						<span class="hide">12-2 周六</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">12-3</span>
+						<span class="hide">12-3 周日</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">12-4</span>
+						<span class="hide">12-4 周一</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">12-5</span>
+						<span class="hide">12-5 周二</span>
+					</li>
+					<li class="">
+						<span style="cursor: pointer;" class="">12-6</span>
+						<span class="hide">12-6 周三</span>
+					</li>
+					<li class="end">
+						<span style="cursor: pointer;" class="">12-7</span>
+						<span class="hide">12-7 周四</span>
+					</li>
+				</ul>
+			</div>
+			<div class="sear-sel-bd quick-buy-sel quick-buy-open" id="sear-sel-bd" style="height: 44px;">
+				<div class="pos-top" style="margin-right:20px;">
+					<select class="select-small" id="cc_start_time">
+						<option value="00002400">00:00--24:00</option>
+						<option value="00000600">00:00--06:00</option>
+						<option value="06001200">06:00--12:00</option>
+						<option value="12001800">12:00--18:00</option>
+						<option value="18002400">18:00--24:00</option>
+					</select>
+				</div>
+				<div class="section clearfix">
+					<div class="section-hd">车次类型：</div>
+					<div class="section-bd" id="cc_train_type_btn_all">
+						<span class="btn-all" id="train_type_btn_all" style="cursor: pointer;">全部</span>
+						<ul id="_ul_station_train_code">
+							<li>
+								<input name="cc_type" value="G" type="checkbox" class="check" id="checkbox_hIKhFNpWYS">
+								<label for="checkbox_hIKhFNpWYS" style="cursor: pointer;">GC-高铁/城际</label>
+							</li>
+							<li>
+								<input name="cc_type" value="D" type="checkbox" class="check" id="checkbox_hhkH4LUYlj">
+								<label for="checkbox_hhkH4LUYlj" style="cursor: pointer;">D-动车</label>
+							</li>
+							<li>
+								<input name="cc_type" value="Z" type="checkbox" class="check" id="checkbox_OxJEqfIJrz">
+								<label for="checkbox_OxJEqfIJrz" style="cursor: pointer;">Z-直达</label>
+							</li>
+							<li>
+								<input name="cc_type" value="T" type="checkbox" class="check" id="checkbox_DNkqZS6nsr">
+								<label for="checkbox_DNkqZS6nsr" style="cursor: pointer;">T-特快</label>
+							</li>
+							<li>
+								<input name="cc_type" value="K" type="checkbox" class="check" id="checkbox_EUHvOTWP68">
+								<label for="checkbox_EUHvOTWP68" style="cursor: pointer;">K-快速</label>
+							</li>
+							<li>
+								<input name="cc_type" value="QT" type="checkbox" class="check" id="checkbox_cRadxr3ZyH">
+								<label for="checkbox_cRadxr3ZyH" style="cursor: pointer;">其他</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="section clearfix">
+					<div class="section-hd">出发车站：</div>
+					<div class="section-bd" id="cc_from_station_name_all">
+						<span class="btn-all" id="from_station_name_all" style="cursor: pointer;">全部</span>
+						<ul id="from_station_ul">
+							<li>
+								<input type="checkbox" class="check" name="cc_from_station" value="杭州东" id="cc_from_station_杭州东_check">
+								<label class="cursor" for="cc_from_station_杭州东_check" id="cc_from_station_杭州东">杭州东</label>
+							</li>
+							<li>
+								<input type="checkbox" class="check" name="cc_from_station" value="杭州" id="cc_from_station_杭州_check">
+								<label class="cursor" for="cc_from_station_杭州_check" id="cc_from_station_杭州">杭州</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="section clearfix">
+					<div class="section-hd">到达车站：</div>
+					<div class="section-bd" id="cc_to_station_name_all">
+						<span class="btn-all" id="to_station_name_all" style="cursor: pointer;">全部</span>
+						<ul id="to_station_ul">
+							<li>
+								<input type="checkbox" class="check" name="cc_to_station" value="上海虹桥" id="cc_to_station_上海虹桥_check">
+								<label class="cursor" for="cc_to_station_上海虹桥_check" id="cc_to_station_上海虹桥">上海虹桥</label>
+							</li>
+							<li>
+								<input type="checkbox" class="check" name="cc_to_station" value="上海南" id="cc_to_station_上海南_check">
+								<label class="cursor" for="cc_to_station_上海南_check" id="cc_to_station_上海南">上海南</label>
+							</li>
+							<li>
+								<input type="checkbox" class="check" name="cc_to_station" value="上海" id="cc_to_station_上海_check">
+								<label class="cursor" for="cc_to_station_上海_check" id="cc_to_station_上海">上海</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="section clearfix pt2">
+					<div class="section-hd" id="memb">乘车人：</div>
+					<div class="section-bd pt2" id="setion_postion">
+						<a href="" class="btn-small" shape="rect">请选择</a>
+					</div>
+				</div>
+				<div class="section clearfix">
+					<div class="section-hd" id="train_first">优先车次：</div>
+					<div class="section-bd pt2" id="prior_train">
+						<a href="" class="btn-small" shape="rect">请选择</a>
+					</div>
+				</div>
+				<div class="section clearfix">
+					<div class="section-hd" id="seat_first">优先席别：</div>
+					<div class="section-bd pt2" id="prior_seat">
+						<a href="" class="btn-small" shape="rect">请选择</a>
+					</div>
+				</div>
+				<div class="section clearfix pt2">
+					<div class="section-hd" id="select_date">备选日期：</div>
+					<div class="section-bd pt2" id="prior_date">
+						<a href="" class="btn-small" shape="rect">请选择</a>
+					</div>
+				</div>
+				<div class="section clearfix pt2">
+					<div class="section-hd" id="ad_setting">高级设置：</div>
+					<div class="section-bd pt2">
+						<span class="mr17">
+							<select id="_prior" class="select-small" style="width:75px;margin-right:10px">
+								<option value="1">席别优先</option>
+								<option value="2">车次优先</option>
+							</select>
+						</span>
+						<span class="mr17">
+							<input type="checkbox" class="check" id="autoSubmit">
+							<label for="autoSubmit" id="autoSubmitTxt" style="cursor: pointer; color: rgb(51, 51, 51);">自动提交</label>
+						</span>
+						<span class="mr17">
+							<input type="checkbox" class="check" id="partSubmit">
+							<label for="partSubmit" id="partSubmitTxt" style="cursor: pointer; color: rgb(51, 51, 51);">余票不足时部分提交</label>
+						</span>
+						<a href="" class="btn-small mr5" id="tryPlayer" shape="rect">试听提示音乐</a>
+						<a href="" id="clearAll" class="btn-small" shape="rect">清空所有选项</a>
+					</div>
+				</div>
+			</div>
+			<div class="quick-gif" style="top: 58px;">
+				<a id="show_more" class="down" shape="rect" style="cursor: pointer;">订票帮手</a>
+			</div>
+		</div>
+
+		<!-- 搜索结果 -->
+		<div class="sear-result" id="sear-result">
+			<span class="fr">
+				<input type="checkbox" class="check" id="avail_ticket">
+				<label for="avail_ticket" style="cursor: pointer;">显示全部可预订车次
+			</label>
+			</span>
+			<p style="display: none;">
+				<strong>杭州 --&gt; 上海（11月22日&nbsp;&nbsp;周三）</strong>
+				共计
+				<strong id="trainum">173</strong>
+				个车次
+			</p>
+			<p id="lc_msg" style="display: none;">
+				您可使用
+				<a href="">接续换乘</a>
+				功能，查询途中换乘一次的部分列车余票情况。
+			</p>
+		</div>
+		<div class="t-list" id="t-list">
+			<table>
+				<thead>
+					<tr class="th" id="float">
+						<th width="90" colspan="1" rowspan="1">车次</th>
+						<th width="100" colspan="1" rowspan="1">
+							出发站
+							<br clear="none">
+							到达站
+						</th>
+						<th width="82" colspan="1" rowspan="1" id="startendtime">
+							<span class="b1" id="s_time" style="cursor: pointer;">出发时间</span>
+							<br>
+							<span class="b2" id="r_time" style="cursor: pointer;">到达时间</span>
+						</th>
+						<th width="82" colspan="1" rowspan="1">
+							<span class="b3" id="l_s" style="cursor: pointer;">历时</span>
+						</th>
+						<th width="49" colspan="1" rowspan="1">
+							商务座
+							<br clear="none">
+							特等座
+						</th>
+						<th width="49" colspan="1" rowspan="1">一等座</th>
+						<th width="49" colspan="1" rowspan="1">二等座</th>
+						<th width="49" colspan="1" rowspan="1">
+							高级
+							<br clear="none">
+							软卧
+						</th>
+						<th width="49" colspan="1" rowspan="1">软卧</th>
+						<th width="49" colspan="1" rowspan="1">动卧</th>
+						<th width="49" colspan="1" rowspan="1">硬卧</th>
+						<th width="49" colspan="1" rowspan="1">软座</th>
+						<th width="49" colspan="1" rowspan="1">硬座</th>
+						<th width="49" colspan="1" rowspan="1">无座</th>
+						<th width="49" colspan="1" rowspan="1">其他</th>
+						<th class="last" colspan="1" rowspan="1">备注</th>
+					</tr>
+				</thead>
+				<tbody id="queryLeftTable"">
+
+					<!-- <tr class="bgc">
+						<td colspan="4" width="370">
+							<div class="ticket-info clearfix">
+								<div class="train">
+									<div>
+										<a class="number">K526</a>
+									</div>
+									<span class="lookup">
+										<b title="查看票价" class=""></b>
+									</span>
+								</div>
+								<div class="cdz">
+									<strong>杭州东</strong>
+									<strong>上海南</strong>
+								</div>
+								<div class="cds">
+									<strong class="start-t">02:11</strong>
+									<strong class="color999">03:58</strong>
+								</div>
+								<div class="ls">
+									<strong>01:47</strong>
+									<span>当日到达</span>
+								</div>
+							</div>
+						</td>
+						<td width="46" align="center" style="cursor: pointer;">--</td>
+						<td width="46" align="center" style="cursor: pointer;">--</td>
+						<td width="46" align="center" style="cursor: pointer;">--</td>
+						<td width="46" align="center" style="cursor: pointer;">--</td>
+						<td width="46" align="center" style="cursor: pointer;" class="yes">有</td>
+						<td width="46" align="center" style="cursor: pointer;">--</td>
+						<td width="46" align="center" style="cursor: pointer;" class="yes">有</td>
+						<td width="46" align="center" style="cursor: pointer;">--</td>
+						<td width="46" align="center" style="cursor: pointer;" class="yes">有</td>
+						<td width="46" align="center" style="cursor: pointer;" class="yes">有</td>
+						<td width="46" align="center" style="cursor: pointer;">--</td>
+						<td align="center" class="no-br" width="80">
+							<a href="" class="btn72">预订</a>
+						</td>
+					</tr> -->
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<!-- 页面底部 -->
+	<div class="footer">
+		<p>
+			<a href="">关于我们</a>
+			|
+			<a href="">网站声明</a>
+		</p>
+		<p>版权所有 © 2008-2017 中国铁路信息技术中心 中国铁道科学研究院</p>
+		<p>京ICP备15003716号-3&nbsp;&nbsp;|&nbsp;&nbsp;京ICP证150437号</p>
+	</div>
+
+	<!-- loading -->
+	<div class="loading" style="display: none;">
+		<img src="img/loading.gif">
+		<div class="shadow"></div>
+	</div>
+
+</body>
+<script src="lib/jquery-3.2.1.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/kuCity.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/pikaday.js"></script>
+<script src="js/index.js"></script> 
+<script src="js/verify.js"></script>
+<script src="js/getTrainScheduleInfo.js"></script>
+</html>

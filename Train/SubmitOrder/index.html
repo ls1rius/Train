@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SubmitOrder</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/SubmitOrder.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+	<!-- header-->
+	<div class="header">
+		<div class="header-bd">
+			<a href="">
+				<h1 class="logo">中国铁路客户服务中心-客运中心</h1>
+			</a>
+			<div class="login-info">
+				<div class="phone-link">
+					<a>手机版</a>
+				</div>
+				<div class="menu">
+					<a href="" class="menu-bd">
+						我的12306
+						<b></b>
+					</a>
+					<div class="menu-list">
+						<b></b>
+						<ul>
+							<li>
+								<a href="">未完成订单</a>
+							</li>
+							<li>
+								<a href="">已完成订单(改/退)</a>
+							</li>
+							<li class="line"></li>
+							<li>
+								<a href="">我的餐饮</a>
+							</li>
+							<li>
+								<a href="">我的保险</a>
+							</li>
+							<li class="line"></li>
+							<li>
+								<a href="">查看个人信息</a>
+							</li>
+							<li>
+								<a href="">账户安全</a>
+							</li>
+							<li class="line"></li>
+							<li>
+								<a href="">常用联系人</a>
+							</li>
+							<li class="line"></li>
+							<li>
+								<a href="">温馨服务查询</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<span class="login-txt">
+					<span>
+						意见反馈:
+						<a class="cursor colorA" href="">
+							12306yjfk@rails.com.cn
+						</a>
+          				<a id="welWords">您好，请</a>
+          			</span>
+          			<a id="login_user" class="colorA">登录</a>
+          			| 
+          			<a id="regist_out">注册</a>
+          		</span>
+			</div>
+			<div class="nav">
+				<ul>
+					<li>
+						<a class="navListItem">客运首页</a>
+					</li>
+					<li>
+						<a class="navListItem current">车票预订</a>
+					</li>
+					<li>
+						<a class="navListItem">连续换乘</a>
+					</li>
+					<li>
+						<a class="navListItem">订餐服务</a>
+					</li>
+					<li>
+						<a class="navListItem">出行向导</a>
+						<div class="nav-list">
+							<ul>
+								<li>
+									<a href="">车次查询</a>
+								</li>
+								<li>
+									<a href="">票价查询</a>
+								</li>
+								<li>
+									<a href="">公布票价查询</a>
+								</li>
+								<li>
+									<a href="">车站车次查询</a>
+								</li>
+								<li>
+									<a href="">中转查询</a>
+								</li>
+								<li>
+									<a href="">正晚点查询</a>
+								</li>
+								<li>
+									<a href="">代售点查询</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a class="navListItem">信息服务</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--页面主体-->
+	<div class="content">
+		<!--列车信息开始-->
+		<div class="layout t-info">
+			<div class="lay-hd">
+				列车信息
+				<span class="small">（以下余票信息仅供参考）</span>
+			</div>
+			<div class="lay-bd">
+				<p class="t-tit" id="ticket_tit_id">
+					<strong class="mr5">XXXX-XX-XX（周六）</strong>
+					<strong class="ml5">G0000</strong>
+					<strong classs="ml5">杭州东</strong>
+					站
+					<strong>（xx:xx开）-绍兴北</strong>
+					站
+					<strong>（xx:xx到）</strong>
+				</p>
+				<p class="t-con" id="ticket_con_id">
+					<span id="ticket_status_id" class="s1">
+						商务座（
+						<span class="colorA">￥xx.x</span>
+						）有票
+					</span>
+					<span id="ticket_status_id" class="s1">
+						一等座（
+						<span class="colorA">￥xx.x</span>
+						）有票
+					</span>
+					<span id="ticket_status_id" class="s1">
+						二等座（
+						<span class="colorA">
+							￥xx.x
+						</span>
+						）有票
+					</span>
+					<span id="ticket_status_id" class="s2">
+						无座（
+						<span class="colorA">￥xx.x</span>
+						）无票
+					</span>
+				</p>
+			</div>
+		</div>
+		<!--列车信息结束-->
+		<!--乘客信息开始-->
+		<div class="layout person">
+			<div class="lay-hd">
+				乘客信息
+				<span class="small" id="psInfo">（填写说明）</span>
+				<div class="s-box">
+					<input id="quickQueryPassenger_id" type="text" value="输入乘客姓名" class="txt">
+					<input id="submit_quickQueryPassenger" type="submit" class="sub">
+				</div>
+			</div>
+			<div class="lay-bd">
+				<div class="per-sel">
+					<div class="item clearfix">
+						<h2 class="cy" id="normal_passenger_image_id" title="常用联系人" style></h2>
+						<ul id="normal_passenger_id">
+
+							<script type="text/x-jsrender" id="content_name">
+								<li>
+									<input typeflag="1" id="normal_passenger_0" type="checkbox" class="check">
+									<label for="normal_passenger_1" style="cursor: pointer;">
+										{{:passenger_name}}
+									</label>
+								</li>
+							</script>
+						</ul>
+					</div>
+				</div>
+				<table class="per-ticket">
+					<tbody>
+					 	<tr>
+					 		<th width="30" rowspan="1" colspan="1">序号</th>
+					 		<th rowspan="1" colspan="1">席别</th>
+					 		<th rowspan="1" colspan="1">票种</th>
+					 		<th rowspan="1" colspan="1">姓名</th>
+					 		<th rowspan="1" colspan="1">证件类型</th>
+					 		<th rowspan="1" colspan="1">证件号码</th>
+					 		<th rowspan="1" colspan="1">手机号码</th>
+					 		<th width="70" rowspan="1" colspan="1"></th>
+					 		<th width="30" rowspan="1" colspan="1"></th>
+					 	</tr>			 
+					</tbody>
+					<tbody id="ticketInfo_id">
+						
+						<script type="text/x-jsrender" id="content-passenger">
+						<tr id={{:trID}}>
+							<td align="center">{{:num}}</td>
+							<td>
+								<select onclick="" id="seatType_1">
+									<option value="1" selected="selected">
+										硬卧（￥xx.x）
+									</option>
+									<option value="2">
+										硬座（￥xx.x）
+									</option>
+								</select>
+							</td>
+							<td>
+								<select onclick="" id="ticketType_1">
+									<option name="ticket_type_option" value="1" selected="selected">
+										成人票
+									</option>
+									<option value="2">
+										儿童票
+									</option>
+									<option value="3">
+										学生票
+									</option>
+									<option value="4">
+										残军票
+									</option>
+								</select>
+							</td>
+							<td>
+								<div class="pos-rel">
+									<input id="passenger_name_1" class="inptxt w110" value={{:name}} size="12" maxlength="20" disabled="disabled" style="color:#999999" >
+								</div>
+							</td>
+							<td>
+								<select id="passenger_id_type_1" disabled="disabled" style="color:#999999">
+									<option value="1" selected="selected">二代身份证</option>
+									<option value="C">港澳通行证</option>
+									<option value="G">台湾通行证</option>
+									<option value="B">护照</option>
+								</select>
+							</td>
+							<td>
+								<div class="pos-rel">
+									<input id="passenger_id_no_1" class="inptxt w160" value={{:cardID}} size="20" maxlength="35" disabled="disabled" style="color:#999999">
+								</div>
+							</td>
+							<td>
+								<div class="pos-rel">
+									<input id="phone_no_1" class="inptxt w110" value={{:mobile}} size="11" maxlength="20" disabled="disabled" style="color:#999999">
+								</div>
+							</td>
+							<td style="width: 40;">
+								
+							</td>
+							<td title="删除常用联系人">
+								<span class="i-del" onclick="" id={{:delID}}></span>
+							</td>
+						</tr>
+						</script>
+					</tbody>
+				</table>
+				<div>
+					<div class="add-per" id="add-per">
+						<span onclick="">新增乘客</span>
+					</div>
+				</div>
+			</div>
+		</div>
+					<div id="add-item" class="add-item">
+						<table class="per-ticket">
+						<tbody>
+					 		<tr>
+					 		<th width="30" rowspan="1" colspan="1">序号</th>
+					 		<th rowspan="1" colspan="1">席别</th>
+					 		<th rowspan="1" colspan="1">票种</th>
+					 		<th rowspan="1" colspan="1">姓名</th>
+					 		<th rowspan="1" colspan="1">证件类型</th>
+					 		<th rowspan="1" colspan="1">证件号码</th>
+					 		<th rowspan="1" colspan="1">手机号码</th>
+					 		<th width="70" rowspan="1" colspan="1"></th>
+					 		<th width="30" rowspan="1" colspan="1"></th>
+					 		</tr>			 
+						</tbody>
+						<tbody id="ticketInfo_id">
+							<tr id="tr_id_1">
+							<td align="center"></td>
+							<td>
+								<select onclick="" id="seatType_1">
+									<option value="1" selected="selected">
+										硬卧（￥xx.x）
+									</option>
+									<option value="2">
+										硬座（￥xx.x）
+									</option>
+								</select>
+							</td>
+							<td>
+								<select onclick="" id="ticketType_1">
+									<option name="ticket_type_option" value="1" selected="selected">
+										成人票
+									</option>
+									<option value="2">
+										儿童票
+									</option>
+									<option value="3">
+										学生票
+									</option>
+									<option value="4">
+										残军票
+									</option>
+								</select>
+							</td>
+							<td>
+								<div class="pos-rel">
+									<input id="passenger_name_x" class="inptxt w110" value size="12" maxlength="20" style="color:#999999" >
+								</div>
+							</td>
+							<td>
+								<select id="passenger_id_type_1" disabled="disabled" style="color:#999999">
+									<option value="1" selected="selected">二代身份证</option>
+									<option value="C">港澳通行证</option>
+									<option value="G">台湾通行证</option>
+									<option value="B">护照</option>
+								</select>
+							</td>
+							<td>
+								<div class="pos-rel">
+									<input id="passenger_id_no_x" class="inptxt w160" value size="20" maxlength="35" style="color:#999999">
+								</div>
+							</td>
+							<td>
+								<div class="pos-rel">
+									<input id="phone_no_x" class="inptxt w110" value size="11" maxlength="20" style="color:#999999">
+								</div>
+							</td>
+							<td style="width: 40;">
+								
+							</td>
+							<td title="删除常用联系人">
+								<span class="i-del" onclick="" id="del_1_default_0"></span>
+							</td>
+							</tr>
+						</tbody>
+					</table>
+					<button id="add-item-btn">
+						确定
+					</button>
+
+					</div>			
+				
+
+		<!--乘客信息结束-->
+
+		<!--按钮-->
+		<div class="lay-btn">
+			<a href="" id="preStep_id" class="btn92" shape="rect">上一步</a>
+			<a href="" id="submitOrder_id" class="btn92s" shape="rect">提交订单</a>
+		</div>
+
+		<!--温馨提示-->
+		<div class="tips-txt"><h2>温馨提示：</h2>
+			<p>
+				1. 一张有效身份证件同一乘车日期同一车次只能购买一张车票，高铁动卧列车除外。
+			</p>
+			<p>
+				2. 购票时可使用的有效身份证件包括：中华人民共和国居民身份证、港澳居民来往内地通行证、台湾居民来往大陆通行证和按规定可使用的有效护照。
+			</p>
+			<p>
+				3. 购买儿童票时，乘车儿童有有效身份证件的，请填写本人有效身份证件信息。乘车儿童没有有效身份证件的，应使用同行成年人的有效身份证件信息；购票时不受第一条限制，但购票后、开车前须办理换票手续方可进站乘车。
+			</p>
+			<p>
+				4. 购买学生票时，须在
+				<a href="" shape="rect">我的常用联系人</a>
+				中登记乘车人的学生详细信息。学生票乘车时间限为每年的暑假6月1日至9月30日、寒假12月1日至3月31日。购票后、开车前，须办理换票手续方可进站乘车。换票时，新生凭录取通知书，毕业生凭学校书面证明，其他凭学生优惠卡。
+			</p>
+			<p>
+				5.购买残疾军人（伤残警察）优待票的，须在购票后、开车前办理换票手续方可进站乘车。换票时，不符合规定的减价优待条件，没有有效"中华人民共和国残疾军人证"或"中华人民共和国伤残人民警察证"的，不予换票，所购车票按规定办理退票手续。
+			</p>
+			<p>
+				<strong>
+					6.购买铁路乘意险的注册用户年龄须在18周岁以上，使用非二代居民身份证注册的用户如购买铁路乘意险，须在
+					<a href="../modifyUser/initQueryUserInfo" shape="rect">我的12306——个人信息</a>
+					如实填写“出生日期”。
+				</strong>
+			</p>
+			<p>
+				<strong>
+					7.父母为未成年子女投保，须在
+					<a href="../passengers/init" shape="rect">我的常用联系人</a>
+					登记未成年子女的有效身份证件信息。
+				</strong>
+			</p>
+		</div>
+		
+	</div>
+	<!-- 页面底部 -->
+	<div class="footer">
+		<p>
+			<a href="">关于我们</a>
+			|
+			<a href="">网站声明</a>
+		</p>
+		<p>版权所有 © 2008-2017 中国铁路信息技术中心 中国铁道科学研究院</p>
+		<p>京ICP备15003716号-3&nbsp;&nbsp;|&nbsp;&nbsp;京ICP证150437号</p>
+	</div>
+    <div class="other">
+    	
+    </div>
+</body>
+<script src="lib/jquery-3.2.1.js"></script>
+<script src="lib/jsrender.js"></script>
+<script src="lib/jsrender.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/index.js"></script> 
+<script src="js/SumbitOrder.js"></script>
+<script src="js/verify.js"></script>
+</html>

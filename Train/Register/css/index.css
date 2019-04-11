@@ -1,0 +1,532 @@
+body {
+	margin: 0 0 0;
+	background-color: #fff;
+	color: #000;
+	font-size: 12px;
+	font-family: Tahoma, "宋体";
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+input {
+	font-size: 12px;
+	font-family: Tahoma;
+	line-height: 18px;
+	padding: 0;
+	margin: 0;
+	color: #333;
+	outline: none;
+}
+
+
+/*header*/
+.header {
+	height: 66px;
+	background-position: 0 0;
+	background: url(../img/bg.png) repeat-x;
+}
+
+.header-bd {
+	width: 1000px;
+	height: 66px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 2000;
+}
+
+.logo {
+	float: left;
+	width: 411px;
+	height: 50px;
+	margin: 0;
+	background: url(../img/logo.png) 12px 8px no-repeat;
+	padding: 8px 0 0 12px;
+	text-indent: -9999px;
+}
+
+.login-info {
+	height: 30px;
+	line-height: 30px;
+	float: right;
+	padding-right: 5px;
+	margin-bottom: 2px;
+}
+
+.login-info .phone-link {
+	background: url(../img/icon_phone.png) left center no-repeat;
+	padding-left: 15px;
+	float: right;
+	margin-left: 25px;
+	cursor: pointer;
+}
+
+.login-info .phone-link a:hover {
+	color: #FB7403;
+}
+
+.menu {
+	float: right;
+	width: 80px;
+	height: 30px;
+	margin-left: 35px;
+	position: relative;
+	z-index: 2999;
+	text-align: left;
+}
+
+.menu .menu-bd {
+	display: block;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.menu .menu-bd:hover {
+	color: #FB7403;
+}
+
+.menu .menu-bd b {
+	display: block;
+	width: 10px;
+	height: 5px;
+	background: url(../img/icon8.png) 0 -35px no-repeat;
+	overflow: hidden;
+	position: absolute;
+	top: 14px;
+	right: 2px;
+}
+
+.menu .menu-list {
+	width: 130px;
+	padding: 5px 10px;
+	border: 1px solid #298CCE;
+	background: #EEF1F8;
+	position: absolute;
+	top: 30px;
+	left: -2px;
+	z-index: 2999;
+	display: none;
+}
+
+.menu .menu-list b {
+	display: block;
+	width: 13px;
+	height: 7px;
+	overflow: hidden;
+	background: url(../img/icon_arrow2.png) -1px 0 no-repeat;
+	position: absolute;
+	top: -7px;
+	left: 50%;
+	margin-left: -7px;
+}
+
+.menu .menu-list ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.menu .menu-list li {
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	padding-left: 5px;
+}
+
+.menu .menu-list .line {
+	border-bottom: 1px dashed #999;
+	height: 1px;
+	line-height: 1px;
+	margin: 5px 0;
+	overflow: hidden;
+}
+
+.menu .menu-list li a {
+	border-left: 3px solid #EEF1F8;
+	padding-left: 5px;
+}
+
+.menu .menu-list li a:hover {
+	color: #00A3D9;
+	border-left: 3px solid #00A3D9;
+}
+
+.login-info .login-txt {
+	color: #666666;
+	float: right;
+}
+
+.colorA {
+	color: #FB7403;
+}
+
+.login-info .login-txt #login_user {
+	margin-left: -0.5px;
+}
+
+.login-info .login-txt #regist_out:hover {
+	color: #FB7403;
+}
+
+.nav {
+	width: 500px;
+	height: 34px;
+	padding: 0px 0 0 43px;
+	background: url(../img/bg_nav.png) right top no-repeat;
+	float: right;
+	position: relative;
+}
+
+.nav ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.nav li {
+	float: left;
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	margin-right: 10px;
+	margin-top: 4px;
+	cursor: pointer;
+}
+
+.nav li a:hover {
+	color: #478DCD;
+	background: url(../img/bg_nav01.png) no-repeat;
+}
+
+.nav li a {
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+}
+
+.nav li .current {
+	background: url(../img/bg_nav01.png) no-repeat;
+	color: #478DCD;
+	font-weight: 700;
+}
+
+.nav li .nav-list {
+	width: 980px;
+	height: 32px;
+	padding: 0px 10px;
+	background: url(../img/bg_navlist.png) repeat-x;
+	border-bottom: 1px solid #999;
+	position: absolute;
+	top: 34px;
+	right: 0;
+	z-index: 2899;
+	display: none;
+	box-shadow: 2px 2px 5px #666;
+}
+
+.nav .nav-list ul {
+	font-weight: normal;
+}
+
+.nav .nav-list ul li {
+	height: 16px;
+	line-height: 16px;
+	padding: 8px 0;
+	overflow: hidden;
+	width: auto;
+	text-align: left;
+	float: right;
+	margin-left: 30px;
+	margin-top: 0;
+	background: none;
+}
+
+.nav .nav-list ul li a {
+	display: inline;
+	padding-left: 5px;
+	color: #666;
+	height: 16px;
+	line-height: 16px;
+	font-weight: 400;
+	background: none;
+}
+
+.nav .nav-list ul li a:hover {
+	color: #478DCD;
+	border-left: 2px solid #478DCD;
+	padding-left: 3px;
+	font-weight: 400;
+}
+
+
+/*页面主体*/
+.content {
+	width: 980px;
+	min-height: 579px;
+	margin: 0 auto;
+	padding-top: 10px;
+	display: block;
+}
+.crumbs{
+	height: 32px;
+    line-height: 32px;
+}
+.layout {
+    border: 1px solid #1678be;
+    border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -ms-border-radius: 5px 5px 0 0;
+    -o-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    background-position: 0 -400px;
+}
+.layout .lay-hd {
+    height: 32px;
+    line-height: 30px;
+    color: #e5f8ff;
+    padding-left: 20px;
+    font-size: 14px;
+    position: relative;
+    background-color: #1678be;
+}
+.reg .lay-bd {
+    background: #fff;
+    padding: 0 10px;
+}
+.reg-list {
+    padding-top: 40px;
+}
+.reg-list li {
+    zoom: 1;
+}
+
+.reg-list li {
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 5px;
+}
+.reg-list .label {
+    display: block;
+    height: 30px;
+    float: left;
+    text-align: right;
+    width: 375px;
+    padding-right: 5px;
+}
+.required {
+    font-size: 16px;
+    color: #f00;
+    font-family: Tahoma;
+    vertical-align: middle;
+    margin-right: 2px;
+    font-weight: 400;
+}
+.reg-list .r-txt {
+    float: left;
+}
+.inptxt {
+    height: 18px;
+    line-height: 18px;
+    border: 1px solid #cfcdc7;
+    background: #fff;
+    color: #999;
+    padding: 5px 0 5px 5px;
+}
+.w200 {
+    width: 195px;
+}
+
+element.style {
+    color: rgb(51, 51, 51);
+}
+.inptxt {
+    height: 18px;
+    line-height: 18px;
+    border: 1px solid #cfcdc7;
+    background: #fff;
+    color: #999;
+    padding: 5px 0 5px 5px;
+}
+.w200 {
+    width: 195px;
+}
+input, select, textarea {
+    font-size: 12px;
+    font-family: Tahoma;
+    line-height: 18px;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    outline: 0;
+}
+.reg-list .tips {
+    float: left;
+    display: inline;
+    margin-left: 8px;
+    color: #FF7F00;
+    height: 30px;
+    line-height: 30px;
+}
+select {
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 0;
+}
+.w200sel {
+    width: 202px;
+}
+.reg-list .r-txt {
+    float: left;
+}
+.btn122s{
+	width: 122px;
+    height: 30px;
+    line-height: 30px;
+    background-position: 0 0;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    background-color: rgb(247,146,9);
+}
+
+
+/*页面底部*/
+.footer {
+	height: 60px;
+	line-height: 20px;
+	padding: 20px 0;
+	border-top: 2px solid #468DCD;
+	background: #F6F6F6;
+	margin-top: 10px;
+	text-align: center;
+	color: #999;
+}
+.reg .lay-btn {
+    padding: 0;
+    margin: 50px 0;
+}
+.lay-btn {
+    height: 30px;
+    padding: 10px 0;
+    text-align: center;
+}
+.lay-btn a {
+    margin: 0 10px;
+}
+
+
+
+
+
+.footer a {
+	color: #999;
+	margin: 0 5px;
+}
+
+
+.safe-rank {
+    margin-right: 5px;
+    height: 6px;
+    padding: 12px 0;
+    float: left;
+}
+.reg-list .safe-rank span {
+    float: left;
+    display: inline;
+}
+.rank-a .s1, .rank-b .s1, .rank-c .s1 {
+    background: #f00;
+}
+.safe-rank span {
+    display: inline-block;
+    width: 40px;
+    height: 6px;
+    overflow: hidden;
+    background: #999;
+    margin-right: 1px;
+}
+.reg-list label.error {
+    margin-left: 380px;
+    padding-bottom: 4px;
+    color: #FF2626;
+    line-height: 20px;
+    /*padding-left: 20px;*/
+}
+#item1{
+	display: none;
+}
+#item2{
+	display: none;
+}
+#item3{
+	display: none;
+}
+#item4{
+	display: none;
+}
+#item5{
+	display: none;
+}
+#item6{
+	display: none;
+}
+#item7{
+	display: none;
+}
+.i-ok {
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url(../img/icon.png) no-repeat;
+    background-position: 0 -600px;
+}
+#iok_userName {
+	display:none;
+	margin-top: 10px;
+	margin-right: 5px;
+}
+#iok_passWord {
+	display:none;
+	margin-top: 10px;
+	margin-right: 5px;
+}
+#iok_confirmPassWord {
+	display:none;
+	margin-top: 10px;
+	margin-right: 5px;
+}
+#iok_name {
+	display:none;
+	margin-top: 10px;
+	margin-right: 5px;
+}
+#iok_cardcode {
+	display:none;
+	margin-top: 10px;
+	margin-right: 5px;
+}
+#iok_email {
+	display:none;
+	margin-top: 10px;
+	margin-right: 5px;
+}	
+#iok_phone {
+	display:none;
+	margin-top: 10px;
+	margin-right: 5px;
+}									
+#nextBtn{
+	cursor:pointer;
+}
+#regist_out,#login_user{
+	cursor: pointer;
+}
